@@ -68,16 +68,17 @@ header .navbar ul li a:hover {
 #menu {
   font-size: 3rem; cursor: pointer; color: rgb(24, 2, 63); display: none;
 }
+/* Responsive Navbar */
 @media (max-width: 768px) {
   #menu { display: block; }
   header .navbar {
-    position: fixed; top: 6.5rem; right: -120%; width: 75%; height: 100%; background-color: #0e0f31; text-align: left; align-items: flex-start;
+    position: fixed; top: 6.5rem; right: -120%; width: 75%; height: 100vh; background-color: #0e0f31; text-align: left; align-items: flex-start; transition: 0.3s;
   }
   header .navbar ul {
-    flex-flow: column; padding: 1rem;
+    flex-flow: column; padding: 2rem;
   }
   header .navbar ul li {
-    text-align: center; width: 100%; margin: 1rem 0; border-radius: 0.5rem; width: 26rem;
+    text-align: center; width: 100%; margin: 1rem 0;
   }
   header .navbar ul li a {
     display: block; padding: 1rem; text-align: left; color: #fff; font-size: 2rem;
@@ -86,6 +87,7 @@ header .navbar ul li a:hover {
 }
 
 /* Hero Section */
+
 .home {
   position: relative; display: flex; flex-wrap: wrap; gap: 1.5rem; min-height: 100vh; align-items: center;
 }
@@ -96,7 +98,7 @@ header .navbar ul li a:hover {
   flex: 1 1 40rem; z-index: 1;
 }
 .home .image img {
-  width: 100%; height: 100%; margin-top: 5rem; margin-left: 6rem; border-radius: 2%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); cursor: pointer;
+  width: 75%; height: 75%; margin-top: 5rem; margin-left: 4.5rem; border-radius: 2%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); cursor: pointer;
 }
 .home .image img:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -114,7 +116,19 @@ header .navbar ul li a:hover {
   font-size: 2.5rem; color: rgb(204, 9, 9); font-weight: 600; padding: 1rem 0;
 }
 .home .btn {
-  margin-top: 1rem; position: absolute; line-height: 0; padding: 1.6rem 3rem; border-radius: 4em; transition: 0.5s; color: #fff; background: #da0416; box-shadow: 0px 5px 18px rgba(247, 48, 48, 0.6); font-family: "Nunito", sans-serif;
+  display: inline-flex; /* Align icon properly */
+  align-items: center; /* Centers text and icon */
+  justify-content: center; /* Centers everything inside */
+  gap: 8px; /* Space between text and icon */
+  padding: 1.6rem 3rem; /* Adjust size */
+  font-size: 1.8rem; /* Improve readability */
+  font-weight: 700;
+  border-radius: 50px; /* Smooth rounded edges */
+  color: #fff;
+  background: #da0416;
+  box-shadow: 0px 5px 18px rgba(247, 48, 48, 0.6);
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
 }
 .home .btn span {
   font-weight: 700; font-size: 1.7rem; letter-spacing: 0.1rem;
@@ -123,12 +137,25 @@ header .navbar ul li a:hover {
   margin-left: 0.3rem; font-size: 1.5rem; transition: 0.3s;
 }
 .home .btn:hover {
-  background: #a30512;
+  background:rgb(102, 19, 19);
+  transform: scale(1.05); /* Slight hover effect */
+}
+.home .btn i {
+  font-size: 1.8rem; /* Adjust icon size */
+  transition: transform 0.3s ease-in-out;
 }
 .home .btn:hover i {
-  transform: translateX(5px);
+  transform: translateY(3px); /* Move arrow down slightly */
 }
-
+/* Responsive Hero Section */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column; text-align: center; padding: 4rem 2rem;
+  }
+  .home .content h2 { font-size: 3.5rem; }
+  .home .content p { font-size: 1.8rem; }
+  .home .btn { font-size: 1.6rem; padding: 1.4rem 2.5rem; }
+}
 /* Social Icons */
 .socials {
   position: relative; margin-top: 9rem;
@@ -203,6 +230,14 @@ header .navbar ul li a:hover {
 .about .row .content .box-container .box p span {
   color: #da0416;
 }
+/* Responsive About Section */
+@media (max-width: 768px) {
+  .about .row {
+    flex-direction: column; text-align: center; padding: 2rem;
+  }
+  .about .row .content { padding: 2rem; }
+  .about .row .content h3 { font-size: 2.2rem; }
+}
 .resumebtn  {
   margin-top: 6rem;
 }
@@ -238,7 +273,7 @@ header .navbar ul li a:hover {
   color: #fff; 
   border-radius: 1rem; 
   padding: 2rem; 
-  width: 90%; 
+  width: 100%; 
   margin: auto; 
   margin-top: 2rem;
 }
@@ -250,7 +285,7 @@ header .navbar ul li a:hover {
 }
 .skills .container .bar {
   margin-bottom: 15px; 
-  padding: 10px; 
+  padding: 17px; 
   border-radius: 1rem; 
   box-shadow: 0 4px 10px rgba(170, 170, 170, 0.2); 
   background: rgba(1, 0, 22, 0.9); 
@@ -272,11 +307,20 @@ header .navbar ul li a:hover {
 }
 .skills .container .bar .info span {
   font-size: 2rem; 
-  font-weight: 500; 
+  font-weight: 400; 
   font-family: "Poppins"; 
   margin-left: 0.5rem;
 }
 
+/* Responsive Skills Section */
+@media (max-width: 768px) {
+  .skills .container .row {
+    grid-template-columns: repeat(2, 1fr); /* Reduce to 2 columns */
+  }
+  .skills .container {
+    padding: 1rem;
+  }
+}
 
 /* Education Section */
 .education {
@@ -562,7 +606,10 @@ form .button-area {
     transform: scale(1.1);
   }
 }
-
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer { padding: 1.5rem; }
+}
 /* Scroll Top */
 #scroll-top {
   position: fixed; top: -140%; right: 2rem; padding: 1.3rem 1.5rem; font-size: 2rem; background: #ffae00; color: rgb(13, 0, 44); border-radius: 50%; transition: 1s linear; z-index: 1000;
