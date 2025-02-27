@@ -134,7 +134,7 @@ header .navbar ul li a:hover {
   flex: 1 1 40rem; z-index: 1;
 }
 .home .image img {
-  width: 75%; height: 75%; margin-top: 5rem; margin-left: 4.5rem; border-radius: 2%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); cursor: pointer;
+  width: 75%; height: 70%; margin-top: 1rem; margin-left: 4.5rem; border-radius: 2%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); cursor: pointer;
 }
 .home .image img:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
